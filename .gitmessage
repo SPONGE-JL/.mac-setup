@@ -1,0 +1,36 @@
+# ---
+# Subject format for Conventional commmits 1.0.0
+# <type>: <ticket-num> simple change summary
+feat: KEY-0000 ...
+
+# ---
+# Body from here for any description message must have a blank line from the subject
+
+# ---
+# Valid 'type' (required)
+#
+#   External relevant changes:
+#     `feat:`     Adds a new feature (API, GUI, TUI, etc.)
+#     `fix:`      Solves a bug
+#
+#   Internal improvements:
+#     `refact:`   A code factoring without changing its external behavior
+#     `perf:`     A code change that improves performance
+#
+#   Colloaboration:
+#     `test:`     Adds or alters missing tests or correcting existing tests
+#     `docs:`     Adds or alters documentation
+#     `conf:`     Adds or alters configuration default value or hierarchy - maybe breaking change(!)
+#     `style:`    Improves linting, formatting, white-space, etc
+#
+#   Dependencies:
+#     `deps:`     Changes package dependencies
+#     `build:`    Changes build process, dependencies, project version, etc
+#     `infra:`    Changge infrastructure dependencies
+#     `ops:`      Changes operation process, backup, recovery, etc
+#
+#   Others:
+#     `chore:`    Other changes that don't modify src or test files
+#     `misc:`     Same with `chore`
+#     `revert:`   Changes that reverting other changes
+x

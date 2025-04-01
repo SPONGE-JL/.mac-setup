@@ -1,0 +1,157 @@
+---
+$schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+blocks:
+- alignment: left
+  segments:
+  - background: p:tan
+    foreground: p:white
+    leading_diamond: 
+    style: diamond
+    template: "{{ if .Env.PNPPSHOST }} \uf8c5 {{ .Env.PNPPSHOST }} {{ end }}"
+    type: text
+  - background: p:teal
+    foreground: p:white
+    powerline_symbol: 
+    style: powerline
+    template: "{{ if .Env.PNPPSSITE }} \uf2dd {{ .Env.PNPPSSITE }}{{ end }}"
+    type: text
+  - background: p:teal
+    foreground: p:white
+    style: diamond
+    template: "{{ if .Env.PNPPSSITE }}\u00a0{{ end }}"
+    trailing_diamond: 
+    type: text
+  type: rprompt
+- alignment: left
+  segments:
+  - background: p:plum
+    foreground: p:white
+    leading_diamond: 
+    properties:
+      time_format: 15:04:05
+    style: diamond
+    template: "⏲︎ {{ .CurrentDate | date .Format }} "
+    type: time
+  - background: p:blush
+    foreground: p:white
+    powerline_symbol: 
+    properties:
+      folder_icon: 
+      folder_separator_icon: /
+      home_icon: 
+      max_depth: 2.0
+      style: agnoster_short
+    style: powerline
+    template: " {{ .Path }} "
+    type: path
+  - background: p:salmon
+    fetch_status: true
+    foreground: p:white
+    powerline_symbol: 
+    properties:
+      branch_icon: ""
+      fetch_stash_count: true
+      fetch_status: false
+      fetch_upstream_icon: true
+    style: powerline
+    template: " \
+      {{ if .UpstreamGone }}{{ url .UpstreamIcon .UpstreamURL }} {{ end }}\
+      {{ .HEAD }} \
+      {{ if .Detached }}(detached) {{ end }}\
+      {{ if .BranchStatus }}{{ .BranchStatus }} {{ end }}\
+      {{ if .Working.Changed }}\uf044 {{ .Working.String }} {{ end }}\
+      {{ if and (.Working.Changed) (.Staging.Changed) }}| {{ end }}\
+      {{ if .Staging.Changed }}\uf046 {{ .Staging.String }} {{ end }}\
+      {{ if gt .StashCount 0 }}\ueb4b {{ .StashCount }}{{ end }}\
+      "
+    type: git
+  - background: p:teal_orange
+    foreground: p:white
+    powerline_symbol: 
+    style: powerline
+    template: " \ue7ad \
+      {{ if .Profile }}{{ .Profile }} {{ end }}\
+      {{ if .Region }}/ {{.Region}} {{end}}\
+      "
+    type: aws
+  - background: p:teal_red
+    foreground: p:white
+    powerline_symbol: 
+    style: powerline
+    template: " \ue718 \
+      {{ if .Error }}{{ .Error }} {{ else }}{{ .Full }} {{ end }}\
+      "
+    type: java
+  - background: p:teal_green
+    foreground: p:white
+    powerline_symbol: 
+    properties:
+      display_default: true
+      display_mode: files
+      fetch_virtual_env: true
+      missing_command_text: init-required
+    style: powerline
+    template: " \ue718 \
+      {{ if .Error }}{{ .Error }} {{ else }}\
+      {{ if .Venv }}{{ .Venv }} {{ end }}\
+      {{ .Full }} {{ end }}\
+      "
+    type: python
+  - background: p:teal_lime
+    foreground: p:white
+    powerline_symbol: 
+    properties:
+      fetch_package_manager: true
+    style: powerline
+    template: " \
+      {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}\
+      {{ if .Error }}{{ .Error }} {{ else }}{{ .Full }} {{ end }}\
+      "
+    type: node
+  - background: p:teal_pupple
+    foreground: p:white
+    powerline_symbol: 
+    properties:
+      fetch_version: true
+    style: powerline
+    template: " \ue718 {{.WorkspaceName}} \
+      {{ if .Version }}({{ .Version }}) {{ end }}\
+      "
+    type: terraform
+  - background: p:teal_blue
+    foreground: p:white
+    properties:
+      always_enabled: true
+      style: roundrock
+      threshold: 500.0
+    style: diamond
+    template: " <#fefefe>\ueba2</> {{ .FormattedMs }} "
+    trailing_diamond: 
+    type: executiontime
+  type: prompt
+- alignment: left
+  newline: true
+  segments:
+  - foreground: green
+    foreground_templates:
+    - "{{ if gt .Code 0 }}lightRed{{ end }}"
+    style: plain
+    template: ❯
+    type: text
+  type: prompt
+final_space: true
+palette:
+  blush: "#DA627D"
+  plum: "#9A348E"
+  salmon: "#ff91a4"
+  sky: "#86BBD8"
+  tan: "#CC3802"
+  teal: "#047E84"
+  teal_blue: "#33658A"
+  teal_green: "#22844a"
+  teal_lime: "#50a429"
+  teal_orange: "#d08300"
+  teal_pupple: "#69338a"
+  teal_red: "#c90000"
+  white: "#FFFFFF"
+version: 3.0

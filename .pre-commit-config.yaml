@@ -1,0 +1,69 @@
+---
+minimum_pre_commit_version: 4.2.0
+default_stages: [pre-commit]
+repos:
+# ------------------------------
+# Coding convention
+# ------------------------------
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v5.0.0 # MIT license
+  hooks:
+  - name: ❯ (secure-coding) detect-aws-credentials
+    id: detect-aws-credentials
+    args: [--allow-missing-credentials]
+
+  # Disable in single usage
+  # - name: ❯ (branch-protection) gate for long-lived branches
+  #   id: no-commit-to-branch
+  #   args: [--branch, master, --branch, main]
+
+  - name: ❯ (branch-protection) gate for no submodules
+    id: forbid-submodules
+
+  - name: ❯ (branch-protection) gate for un-mitigated conflicts
+    id: check-merge-conflict
+    args: [--assume-in-merge] # Allows running the hook when there is no ongoing merge operation
+
+  - name: ❯ (coding-convention) trailing-whitespace
+    id: trailing-whitespace
+
+  - name: ❯ (coding-convention) end-of-file-fixer
+    id: end-of-file-fixer
+
+- repo: https://github.com/Lucas-C/pre-commit-hooks
+  rev: v1.5.5 # MIT license
+  hooks:
+  - name: ❯ (coding-convention) forbid-crlf
+    id: forbid-crlf
+
+  - name: ❯ (coding-convention) remove-crlf
+    id: remove-crlf
+
+  - name: ❯ (coding-convention) forbid-tabs
+    id: forbid-tabs
+
+  - name: ❯ (coding-convention) remove-tabs
+    id: remove-tabs
+
+- repo: https://github.com/adrienverge/yamllint.git
+  rev: v1.37.1 # GPL-3.0 license
+  hooks:
+  - name: ❯ (coding-convention) yamllint
+    id: yamllint
+    args: [--config-file=.yamllint.yaml, --strict, --format=parsable]
+
+- repo: https://github.com/DavidAnson/markdownlint-cli2
+  rev: v0.18.1 # MIT license
+  hooks:
+  - name: ❯ (coding-convention) markdonwlint
+    id: markdownlint-cli2
+
+# ------------------------------
+# Commit convention
+# ------------------------------
+- repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
+  rev: v9.22.0 # MIT license
+  hooks:
+  - name: ❯ (conventional-commit) commitlint
+    id: commitlint
+    stages: [commit-msg]

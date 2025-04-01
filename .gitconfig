@@ -1,0 +1,55 @@
+[include]
+  path = ~/.gitcredentials
+
+[help]
+  autocorrect = 1
+
+[column]
+  ui = auto
+
+[core]
+  # Line endings normalized to LF for Mac > https://git-scm.com/docs/gitattributes#_end_of_line_conversion
+  autocrlf = input
+  # Interaction with terminal > https://stackoverflow.com/a/49862151
+  pager = less -FMRiX
+  # Filesystem monitor for faster `git status`
+  untrackedcache = true
+  fsmonitor = true
+
+[init]
+  defaultBranch = main
+
+[commit]
+  template = ~/.gitmessage
+
+[branch]
+  sort = -committerdate
+
+[fetch]
+  # Write commit graph on every fetch
+  writeCommitGraph = true
+
+[pull]
+  # Enable: git pull --fast-forward=only > https://stackoverflow.com/a/23139521
+  ff = only
+  # Enable: git pull --rebase > https://git-scm.com/book/en/v2/Git-Branching-Rebasing
+  rebase = true
+
+[diff]
+  word-diff = color
+
+[alias]
+  # Faster clean-up include untracked objects
+  staash = stash --all
+
+  # Beauty git diff
+  dd = -c diff.external=difft diff
+  dl = -c diff.external=difft log --ext-diff -p
+  ds = -c diff.external=difft show --ext-diff
+  wd = diff --word-diff
+
+  # Beauty git log
+  lg  = log --graph --abbrev-commit --decorate --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  lg1 = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+  lg2 = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
+  lg3 = log --graph --abbrev-commit --decorate --all --format=format:'%C(yellow)%h%C(reset) %C(blue)%an <%ae>%C(reset) %C(magenta)%cr%C(reset)%C(auto)%d%C(reset)%n%s'

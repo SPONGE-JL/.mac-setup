@@ -1,0 +1,19 @@
+---
+extends: default
+# YAMLlist rules - https://yamllint.readthedocs.io/en/stable/rules.html#rules
+rules:
+  comments:
+    min-spaces-from-content: 1
+  empty-lines:
+    max: 1
+  hyphens:
+    max-spaces-after: 1
+  indentation:
+    spaces: consistent
+    indent-sequences: false
+  line-length:
+    max: 320
+  quoted-strings:
+    quote-type: double
+    required: false
+    allow-quoted-quotes: false

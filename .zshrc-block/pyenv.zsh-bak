@@ -1,0 +1,10 @@
+# ---
+# PyEnv - https://github.com/pyenv/pyenv#set-up-your-shell-environment-for-pyenv
+export PYENV_ROOT="${HOME}/.pyenv"
+export PATH="${PYENV_ROOT}/bin:${PATH}"
+if command -v pyenv > /dev/null; then
+  eval "$(pyenv init - zsh)"
+  # Build dependencies - https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+  export PATH="$(brew --prefix sqlite)/bin:${PATH}"
+  export PATH="$(brew --prefix tcl-tk@8)/bin:${PATH}"
+fi

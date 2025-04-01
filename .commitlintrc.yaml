@@ -1,0 +1,106 @@
+---
+# ------------------------------
+# Guide message
+# ------------------------------
+helpUrl: |
+  https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+
+  Here is the valid commit message guideline:
+
+    `<type>[(<scope>)][!]: [ticket-num] <description>` (within 100 characters)
+
+  Example:
+
+    $ git commit -m 'feat(tms): ISSUE-123 serve new props - expiredDate, lastLogin'
+    $ git commit -m 'feat(invoice)!: ISSUE-234 add Korean-invoice with replacing partnership (~> 2.x)'
+    $ git commit -m 'fix(cart/ship): ISSUE-345 prevent order an empty shopping cart'
+    $ git commit -m 'style: ISSUE-456 re-order package import'
+    $ git commit -m 'build: ISSUE-789 enable parallel deployment'
+
+  Valid type: (required)
+
+    API relevant changes:
+      `feat:`     Adds a new feature
+      `fix:`      Solves a bug
+
+    Internal improvements:
+      `refact:`   A code factoring without changing its external behavior
+      `perf:`     A code change that improves performance
+
+    Collaboration:
+      `test:`     Adds or alters missing tests or correcting existing tests
+      `docs:`     Adds or alters documentation
+      `style:`    Improves linting, formatting, white-space, etc
+
+    Dependencies:
+      `deps:`     Changes package dependencies
+      `build:`    Changes build process, dependencies, project version, etc
+      `ops:`      Changes operation process, backup, recovery, etc
+
+    Others:
+      `chore:`    Other changes that don't modify src or test files
+      `misc:`     Same with `chore`
+      `revert:`   Changes that reverting other changes
+
+# to use excalmation(!) to express breaking-change
+parserPreset:
+  parserOpts:
+    headerPattern: "^(\\w*)(?:\\((.*)\\))?\\!?: (.*)$"
+    headerCorrespondence:
+      - type
+      - scope
+      - subject
+
+# rules are documented at https://commitlint.js.org/#/reference-rules
+# each rule has an array of three values:
+# - 0, 1, 2 (rule is disabled, warning or error)
+# - always/never
+# - value
+rules:
+  # ------------------------------
+  # header: subject
+  # ------------------------------
+  # the subject may not exceed 100 characters
+  header-max-length: [2, always, 100]
+  # the subject may not end with a "."
+  header-full-stop: [2, never, "."]
+  # the subject may not end with some whitespaces
+  header-trim: [2, always]
+  # the subject cannot be empty
+  subject-empty: &forbidden [2, never]
+  # the subject can have excalmation(!) to express breaking-change
+  subject-exclamation-mark: &allowed [0]
+
+  # ------------------------------
+  # header: type
+  # ------------------------------
+  type-case: &lower-case [2, always, lower-case]
+  type-empty: *forbidden
+  type-enum:
+    - 2
+    - always
+    - # API relevant changes
+      - feat
+      - fix
+      # Internal improvements
+      - refact
+      - perf
+      # Colloaboration
+      - test
+      - docs
+      - style
+      # Dependent changes
+      - deps
+      - build
+      - ops
+      # Others
+      - chore
+      - misc
+      - revert
+
+  # ------------------------------
+  # header: scope
+  # ------------------------------
+  scope-case: *lower-case
+  # the scope can empty
+  scope-empty: *allowed
