@@ -137,8 +137,6 @@
 
 - [Amazon Kindle](https://apps.apple.com/us/app/amazon-kindle/id302584613): Read eBooks & Magazines via Amazon Shopping
 
----
-
 ## Binary components
 
 - [Obsidian](https://obsidian.md/download): Sharpen your thinking
@@ -173,3 +171,7 @@
       kubectl version
       helm version
       ```
+
+## License
+
+Free to copy or folk based on [MIT License](./LICENSE)
