@@ -4,7 +4,7 @@
 
 # ---
 # Homebrew set to PATH variable
-if command -v brew > /dev/null; then
+if ! command -v brew > /dev/null; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
   export HOMEBREW_NO_ENV_HINTS=1
 fi
