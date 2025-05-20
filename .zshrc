@@ -7,17 +7,27 @@ export LANG=en_US.UTF-8
 
 
 # ---
-# Oh-my-zsh
+# Oh-my-zsh > Performance tuning
+DISABLE_AUTO_UPDATE="true"
+DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_COMPFIX="true"
+# Oh-my-zsh > Aggressive completions
+autoload -Uz compinit
+[ "$(date +'%j')" != "$(stat -f '%Sm' -t '%j' ~/.zcompdump 2> /dev/null)" ] && compinit || compinit -C
+# Oh-my-zsh > Plugins
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   git
-  zsh-syntax-highlighting
   zsh-autosuggestions
+  zsh-syntax-highlighting # Always last
 )
-# plugin > auto suggestion > https://github.com/zsh-users/zsh-autosuggestions#configuration
+# Oh-my-zsh > Plugins > Auto Suggestions > https://github.com/zsh-users/zsh-autosuggestions#configuration
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="cat *|cd *|echo *|rm *|ls *"
-# loading
+# Oh-my-zsh > Plugins > Auto Suggestions > https://scottspence.com/posts/speeding-up-my-zsh-shell#plugin-management
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+ZSH_AUTOSUGGEST_USE_ASYNC=1
+# Oh-my-zsh > Loading
 source "${ZSH}/oh-my-zsh.sh"
 
 
@@ -46,8 +56,10 @@ setopt NO_BEEP
 # ---
 # Custom scripts
 for shell_file in $(find "${HOME}/.zshrc-block/." -type f | grep "zsh$" | sort); do
+  # echo "❯ [$(date +'%Y-%m-%d %T.%N')] Load ~$(awk -F'.zshrc-block/.' '{print $2}' <<< ${shell_file})"
   source "${shell_file}"
 done
+# printf '\33[H\33[2J'
 
 
 # ---

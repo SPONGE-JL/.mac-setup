@@ -2,6 +2,12 @@
 # Custom
 .gitcredentials
 
+# Version files
+.go-version
+.nvmrc
+.python-version
+.sdkmanrc
+
 # ---
 # Created by https://www.toptal.com/developers/gitignore/api/macos,linux
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,linux
