@@ -28,12 +28,22 @@
 [fetch]
   # Write commit graph on every fetch
   writeCommitGraph = true
+  # Enable: git fetch --all --prune --tags --prune-tags > https://git-scm.com/docs/git-config#Documentation/git-config.txt-fetchprune
+  all = true
+  tag = true
+  prune = true
+  pruneTags = true
 
 [pull]
   # Enable: git pull --fast-forward=only > https://stackoverflow.com/a/23139521
   ff = only
   # Enable: git pull --rebase > https://git-scm.com/book/en/v2/Git-Branching-Rebasing
   rebase = true
+  showForcedUpdates = true
+
+[rebase]
+  autoStash = true
+  updateRefs = true
 
 [diff]
   word-diff = color
