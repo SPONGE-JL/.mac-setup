@@ -21,9 +21,7 @@ function select-aws-profile() {
 
   # Cancled to select
   if [ -z "${selected_aws_profile}" ]; then
-    echo "❯ ❗ You have not selected any AWS Profile."
-    echo " "
-    echo "❯  Current AWS_PROFILE: ${AWS_PROFILE:-undefined} @ ${AWS_REGION:-unknown-region}"
+    echo "❯ 🛑 You should select a profile first"
     echo " "
     return
   fi
@@ -81,4 +79,11 @@ function query-aws-account-name() {
   echo "❯  Caller Identity as You:"
   aws sts get-caller-identity --output json | jq
   echo " "
+}
+
+function aws-profile() {
+  echo " "
+  clear-credentials-variables
+  select-aws-profile
+  [ -n "${AWS_PROFILE}" ] && query-aws-account-name
 }
