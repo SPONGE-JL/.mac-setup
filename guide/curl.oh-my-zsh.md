@@ -29,10 +29,6 @@ Install basic plugins:
 # Install Syntax Highlight
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
     ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-
-# Install Autosuggestion
-git clone https://github.com/zsh-users/zsh-autosuggestions.git \
-    ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
 Enable plugins: $ `vi ~/.zshrc`
@@ -41,7 +37,8 @@ Enable plugins: $ `vi ~/.zshrc`
 plugins=(
   # [plugins...]
   git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
+  zsh-syntax-highlighting # Always last
 )
 ```
+
+Whole detail settings: [`.zshrc`](../.zshrc#L9)

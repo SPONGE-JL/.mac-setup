@@ -18,15 +18,8 @@ autoload -Uz compinit
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   git
-  zsh-autosuggestions
   zsh-syntax-highlighting # Always last
 )
-# Oh-my-zsh > Plugins > Auto Suggestions > https://github.com/zsh-users/zsh-autosuggestions#configuration
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-ZSH_AUTOSUGGEST_HISTORY_IGNORE="cat *|cd *|echo *|rm *|ls *"
-# Oh-my-zsh > Plugins > Auto Suggestions > https://scottspence.com/posts/speeding-up-my-zsh-shell#plugin-management
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
-ZSH_AUTOSUGGEST_USE_ASYNC=1
 # Oh-my-zsh > Loading
 source "${ZSH}/oh-my-zsh.sh"
 

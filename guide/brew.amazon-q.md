@@ -14,3 +14,21 @@
 brew install --cask amazon-q
 open '/Applications/Amazon Q.app'
 ```
+
+Remove zsh-autosuggestions from `~/.zshrc` and restart your terminal:
+
+```diff
+  plugins=(
+    ...
+-   zsh-autosuggestions
+    ...
+  )
+```
+
+> Remove the installed plugin: `rm -r ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions`
+
+Check status:
+
+```bash
+q doctor
+```
