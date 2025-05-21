@@ -47,6 +47,8 @@
 
 - [aws](./guide/brew.aws.md): Command line interface for AWS cloud
 
+- [q](./guide/brew.amazon-q.md): Command line interface for AWS developers
+
 ## Configurations
 
 - Clone dotfiles repository to your home directory:
@@ -82,13 +84,6 @@
   ```bash
   brew install --cask itsycal
   open '/Applications/Itsycal.app'
-  ```
-
-- [Amazon Q Developer for CLI](https://docs.aws.amazon.com/amazonq/latest/qdeveloper-ug/command-line.html):
-
-  ```bash
-  brew install --cask amazon-q
-  open '/Applications/Amazon Q.app'
   ```
 
 - [Raycast](https://www.raycast.com/):
