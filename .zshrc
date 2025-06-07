@@ -56,6 +56,11 @@ done
 
 
 # ---
+# Custom shortcut
+alias setup="cd ${HOME}/.mac-setup"
+
+
+# ---
 # Rancher Desktop - manual setting
 export PATH="${HOME}/.rd/bin:${PATH}"
 
