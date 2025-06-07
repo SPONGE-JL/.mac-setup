@@ -44,9 +44,17 @@ e1s --version
 
 ### For AWS SSO
 
-Make aws configuration folder: `mkdir -p ${HOME}/.aws`
+Make aws configuration folder:
 
-Add configuration for profile: `vi ~/.aws/config`
+```bash
+mkdir -p ${HOME}/.aws
+```
+
+Add configuration for profile:
+
+```bash
+vi ~/.aws/config
+```
 
 ```toml
 # =============================================================================
@@ -63,7 +71,11 @@ output = json
 # =============================================================================
 ```
 
-Add credentials of profile: `vi ~/.aws/credentials`
+Add credentials of profile:
+
+```bash
+vi ~/.aws/credentials
+```
 
 ```toml
 # =============================================================================
@@ -82,3 +94,7 @@ role_arn = arn:aws:iam::111122223333:role/MACHINE-ROLE-NAME
 
 Use `aws-profile` with source [`aws.zsh`](../.zshrc-block/aws.zsh)
 (depend on [fzf](https://junegunn.github.io/fzf/))
+
+```bash
+aws-profile
+```

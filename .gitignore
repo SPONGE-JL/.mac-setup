@@ -1,5 +1,6 @@
 # ---
-# Custom
+# Credentials
+.aws
 .gitcredentials
 
 # Version files

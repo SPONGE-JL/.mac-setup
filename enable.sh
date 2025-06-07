@@ -1,5 +1,6 @@
 #!/bin/zsh
 stow --ignore=.DS_Store \
+     --ignore=.aws \
      --ignore=.vscode \
      --ignore=.commitlintrc.yaml \
      --ignore=.editorconfig \
