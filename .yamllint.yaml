@@ -12,7 +12,7 @@ rules:
     spaces: consistent
     indent-sequences: false
   line-length:
-    max: 320
+    max: 350
   quoted-strings:
     quote-type: double
     required: false

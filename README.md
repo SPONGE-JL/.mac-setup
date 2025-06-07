@@ -4,6 +4,9 @@
 
 # .mac-setup
 
+From factory reset to below example
+![example](./.zshrc-block/theme/M365Princess-custom.omp.png)
+
 ## Fundamentalities
 
 - [Homebrew](./guide/brew.md): Package manager for macOS (or Linux)

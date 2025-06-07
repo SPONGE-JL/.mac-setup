@@ -1,5 +1,6 @@
 ---
 $schema: https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+version: 3.0
 blocks:
 - alignment: left
   segments:
@@ -54,16 +55,42 @@ blocks:
       fetch_status: false
       fetch_upstream_icon: true
     style: powerline
-    template: " \
-      {{ if .UpstreamGone }}{{ url .UpstreamIcon .UpstreamURL }} {{ end }}\
-      {{ .HEAD }} \
-      {{ if .Detached }}(detached) {{ end }}\
-      {{ if .BranchStatus }}{{ .BranchStatus }} {{ end }}\
-      {{ if .Working.Changed }}\uf044 {{ .Working.String }} {{ end }}\
-      {{ if and (.Working.Changed) (.Staging.Changed) }}| {{ end }}\
-      {{ if .Staging.Changed }}\uf046 {{ .Staging.String }} {{ end }}\
-      {{ if gt .StashCount 0 }}\ueb4b {{ .StashCount }}{{ end }}\
-      "
+    template: " {{ .HEAD }} "
+    type: git
+  - background: p:c-git-normal
+    fetch_status: true
+    background_templates:
+    - "{{ if gt .Ahead 0 }}p:c-git-ahead{{ end }}"
+    - "{{ if gt .Behind 0 }}p:c-git-behind{{ end }}"
+    - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:c-git-upstream-gone{{ end }}"
+    - "{{ if .UpstreamGone }}p:c-git-upstream-gone{{ end }}"
+    foreground: p:c-badge-text
+    leading_diamond: \uE0B6
+    template: " {{ .BranchStatus }} "
+    powerline_symbol: 
+    properties:
+      branch_icon: "\uE0A0 "
+      fetch_status: true
+      fetch_stash_count: true
+    trailing_diamond: "\uE0B4"
+    style: powerline
+    type: git
+  - background: p:c-git-normal
+    fetch_status: true
+    background_templates:
+    - "{{ if and (not .Working.Changed) (.Staging.Changed) }}p:c-git-staging{{ end }}"
+    - "{{ if and (.Working.Changed) (.Staging.Changed) }}p:c-git-staging-working{{ end }}"
+    - "{{ if and (.Working.Changed) (not .Staging.Changed) }}p:c-git-working{{ end }}"
+    foreground: p:c-badge-text
+    leading_diamond: " \uE0B6"
+    template: " {{ if .Working.Changed }}\uF448 ({{ .Working.String }}) {{ end }}{{ if and .Working.Changed .Staging.Changed }}\uE0B1 {{ end }}{{ if .Staging.Changed }}{{ if not .Working.Changed }}\uf15c {{ end }}({{ .Staging.String }}) {{ end }}{{ if .StashCount }}\ueb4b {{ .StashCount }} Stash{{ if gt .StashCount 1 }}es{{ end }} {{ end }}"
+    powerline_symbol: 
+    properties:
+      branch_icon: "\uE0A0 "
+      fetch_status: true
+      fetch_stash_count: true
+    trailing_diamond: "\uE0B4"
+    style: powerline
     type: git
   - background: p:teal_orange
     foreground: p:white
@@ -154,4 +181,11 @@ palette:
   teal_pupple: "#69338a"
   teal_red: "#c90000"
   white: "#FFFFFF"
-version: 3.0
+  c-git-upstream-gone: "#3b7a9e"
+  c-git-normal: "#2d8d7c"
+  c-git-ahead: "#6a5fa4"
+  c-git-ahead-behind: "#4a6c8a"
+  c-git-staging: "#d48a4c"
+  c-git-staging-working: "#c05a5a"
+  c-git-working: "#b74a62"
+  c-git-behind: "#a13e4c"
