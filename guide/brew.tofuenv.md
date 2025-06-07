@@ -13,7 +13,6 @@ Simple opentofu version manager
 ## Setup
 
 ```bash
-brew tap tofuutils/tap
 brew install tofuenv
 
 tofuenv --version
