@@ -6,7 +6,7 @@ function parse-aws-profile() {
 
 function choose-aws-profile-via-fzf() {
   fzf --no-sort --cycle --no-multi --layout reverse --height 50% --info inline --border --padding=1 \
-      --preview "echo -e '⬇︎ in ~/.aws/credentials\n' && cat ~/.aws/credentials | grep -A3 {} | grep -v '#'" \
+      --preview "echo -e '⬇︎ in ~/.aws/credentials\n' && cat ~/.aws/credentials | grep -A3 {} | grep -v '#' | head -n 4" \
       --preview-window 'right,75%' || true
 }
 

@@ -185,7 +185,7 @@ palette:
   c-git-normal: "#2d8d7c"
   c-git-ahead: "#6a5fa4"
   c-git-ahead-behind: "#4a6c8a"
-  c-git-staging: "#d48a4c"
+  c-git-staging: "#cc6410"
   c-git-staging-working: "#c05a5a"
   c-git-working: "#b74a62"
   c-git-behind: "#a13e4c"
