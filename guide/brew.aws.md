@@ -16,33 +16,28 @@ brew install awscli
 aws --version
 ```
 
-### Optional tools
-
-[iamlive](https://onecloudplease.com/project/iamlive):
-Generate an IAM policy from AWS calls
-
-```bash
-brew install iann0036/iamlive/iamlive
-
-iamlive -set-ini -sort-alphabetical # escape with ctrl + c
-```
-
-[e1s](https://github.com/keidarcy/e1s#readme):
-Easily Manage AWS ECS Resources in Terminal
-
-```bash
-brew install keidarcy/tap/e1s
-
-e1s --version
-```
-
-- [Config](https://github.com/keidarcy/e1s?tab=readme-ov-file#config-filesample)
-- [Theme](https://github.com/keidarcy/e1s?tab=readme-ov-file#theme-and-colors)
-- [Features](https://github.com/keidarcy/e1s?tab=readme-ov-file#features)
-
 ## Configuration
 
-### For AWS SSO
+### For AWS web console with SSO
+
+Easy way, you can use [the **multi session support** in native way](https://aws.amazon.com/ko/about-aws/whats-new/2025/01/aws-management-console-simultaneous-sign-in-multiple-accounts/).
+
+If you have more than 3 account or have some role-switching actions, you can use community extentions:
+
+- Options for **Firefox**:
+
+  - [Firefox Multi-Account Containers](https://addons.mozilla.org/ko/firefox/addon/multi-account-containers/) +
+    [AWS SSO Containers](https://addons.mozilla.org/en-US/firefox/addon/aws-sso-containers/)
+  - [AWS role switch](https://addons.mozilla.org/en-US/firefox/addon/aws-role-switch/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+  - [AWS Colorful Navbar](https://addons.mozilla.org/en-US/firefox/addon/aws-colorful-navbar/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
+
+- Options for **Google Chrome**:
+
+  - [AWS SSO Extender](https://chromewebstore.google.com/detail/aws-sso-extender/pojoaiboolahdaedebpjgnllehpofkep)
+  - [AWS role switch](https://chromewebstore.google.com/detail/aws-role-switch/mjgccddjodbakimbncbmobdgpmoddalc?hl=en)
+  - [AWS Colorful Navbar](https://chromewebstore.google.com/detail/aws-colorful-navbar/kgifmgnlchjjippdpkblbdlfidcpceme)
+
+### For AWS terminal with SSO
 
 Make aws configuration folder:
 
@@ -98,3 +93,29 @@ Use `aws-profile` with source [`aws.zsh`](../.zshrc-block/aws.zsh)
 ```bash
 aws-profile
 ```
+
+## Additional tools
+
+### [iamlive](https://onecloudplease.com/project/iamlive)
+
+Generate an IAM policy from AWS calls
+
+```bash
+brew install iann0036/iamlive/iamlive
+
+iamlive -set-ini -sort-alphabetical # escape with ctrl + c
+```
+
+### [e1s](https://github.com/keidarcy/e1s#readme)
+
+Easily Manage AWS ECS Resources in Terminal
+
+```bash
+brew install keidarcy/tap/e1s
+
+e1s --version
+```
+
+- [Config](https://github.com/keidarcy/e1s?tab=readme-ov-file#config-filesample)
+- [Theme](https://github.com/keidarcy/e1s?tab=readme-ov-file#theme-and-colors)
+- [Features](https://github.com/keidarcy/e1s?tab=readme-ov-file#features)
