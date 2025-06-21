@@ -15,7 +15,7 @@ From factory reset to below example
 
 - Parsers: `brew install base64 tree grep jq yq awk fzf jfryy/tap/qq`
 
-- Network: `brew install curl wget telnet`
+- Network: `brew install curl wget`
 
 - Beautify: [`brew install bat bat-extras ripgrep`](https://github.com/eth-p/bat-extras#readme)
 
