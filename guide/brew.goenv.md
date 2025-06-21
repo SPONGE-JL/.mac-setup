@@ -28,7 +28,7 @@ Simple way
 
 ```bash
 goenv latest
-gp version
+go version
 ```
 
 Install and use [specific published go][Page-Go]
