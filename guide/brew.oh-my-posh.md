@@ -9,7 +9,7 @@ Prompt theme engine for any shell
 ## Setup
 
 ```bash
-brew install --cask oh-my-posh
+brew install --cask oh-my-posh 2> /dev/null || brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 oh-my-posh --version
 ```
