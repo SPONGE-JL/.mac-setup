@@ -5,9 +5,9 @@
 # ---
 # Homebrew set to PATH variable
 if ! command -v brew > /dev/null; then
-  test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
-  test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  test -d /opt/homebrew && eval "$(/opt/homebrew/bin/brew shellenv)"
+  test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)" || true
+  test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" || true
+  test -d /opt/homebrew && eval "$(/opt/homebrew/bin/brew shellenv)" || true
   export HOMEBREW_NO_ENV_HINTS=1
 fi
 
