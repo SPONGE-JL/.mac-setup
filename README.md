@@ -23,6 +23,8 @@ From factory reset to below example
 
   [Page-RG]: https://github.com/burntsushi/ripgrep?tab=readme-ov-file#screenshot-of-search-results
 
+- Other utilities: `brew install zip`
+
 ## CLI components
 
 - [iTerm2](./guide/brew.iterm2.md): Alternative terminal for macOS
