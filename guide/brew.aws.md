@@ -106,6 +106,8 @@ brew install iann0036/iamlive/iamlive
 iamlive -set-ini -sort-alphabetical # escape with ctrl + c
 ```
 
+> [issue: Brew support on Linux](https://github.com/iann0036/iamlive/issues/66#issuecomment-2993888476)
+
 ### [e1s](https://github.com/keidarcy/e1s#readme)
 
 Easily Manage AWS ECS Resources in Terminal
