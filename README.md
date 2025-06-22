@@ -13,6 +13,8 @@ From factory reset to below example
 
 - [Stow](./guide/brew.stow.md): Symlink farm manager
 
+- Archivers: `brew install zip gnu-tar`
+
 - Parsers: `brew install base64 tree grep jq yq awk fzf jfryy/tap/qq`
 
 - Network: `brew install curl wget`
@@ -22,8 +24,6 @@ From factory reset to below example
   > allow command: `bat`, `batdiff`, `batgrep`(with [rg][Page-RG]), `batwatch`, `prettybat`
 
   [Page-RG]: https://github.com/burntsushi/ripgrep?tab=readme-ov-file#screenshot-of-search-results
-
-- Other utilities: `brew install zip`
 
 ## CLI components
 
