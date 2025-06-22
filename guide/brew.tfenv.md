@@ -46,10 +46,10 @@ Default terraform client version setting:
 
 ```bash
 # Check remote stable versions
-tfenv list-remote | grep -e "^1.\d*.\d$" | head -n 7
+tfenv list-remote | grep -e "^1.\d*." 2> /dev/null | grep -v "-" | head -n 7
 
 # Set latest stable version as default
-tfenv use $(tfenv list-remote | grep -e "^1.\d*.\d$" | head -n 1)
+tfenv list-remote | grep -e "^1.\d*." 2> /dev/null | grep -v "-" | head -n 1)
 
 # Check terraform client
 terraform --version
