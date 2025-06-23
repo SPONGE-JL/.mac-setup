@@ -25,24 +25,6 @@ difft --version
 
 ## Configurations
 
-Set global git credentials at `.gitcredentials`:
-
-```toml
-[user]
-name       = SPONGE-JL
-email      = dev2sponge@gmail.com
-signingkey = /path/to/user/public.key
-
-[gpg]
-format = ssh
-
-[commit]
-gpgsign = true
-
-[tag]
-gpgsign = true
-```
-
 ### [Connection with SSH on GitHub](https://github.com/settings/keys)
 
 1. [Generate new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
@@ -58,6 +40,13 @@ gpgsign = true
 ### [Verification commit signature with GPG GitHub](https://github.com/settings/keys)
 
 1. [Install the `GnuPG` as GPG command line tool](https://www.gnupg.org/download/):
+
+    > If you are Linux, you should remove old built-in gpg-agent:
+    >
+    > ```bash
+    > sudo apt remove gpg-agent
+    > /usr/bin/gpgconf --kill all
+    > ```
 
     ```bash
     brew install gnupg
@@ -75,6 +64,23 @@ gpgsign = true
     - [Signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
 
     - [Signing tags](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-tags)
+
+### Set global credentials
+
+Set in `.gitcredentials` (ignored in git):
+
+```toml
+[user]
+name       = <username>
+email      = <email@address.com>
+signingkey = <gpg_key>
+
+[commit]
+gpgsign = true
+
+[tag]
+gpgSign = true
+```
 
 ---
 
