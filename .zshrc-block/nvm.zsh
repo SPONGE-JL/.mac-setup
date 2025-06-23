@@ -4,7 +4,7 @@ export NVM_DIR="${HOME}/.nvm"
 [ ! -d "${NVM_DIR}" ] && mkdir -p ${NVM_DIR} || true
 
 if brew list nvm > /dev/null 2>&1; then
-  brew_nvm_preix="/opt/homebrew/opt/nvm" # "$(brew --prefix nvm)"
+  brew_nvm_preix="$(brew --prefix nvm)"
   [ -s "${brew_nvm_preix}/nvm.sh" ] && \. "${brew_nvm_preix}/nvm.sh" # This loads nvm
 fi
 
