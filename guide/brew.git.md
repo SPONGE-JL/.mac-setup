@@ -31,7 +31,10 @@ Set global git credentials at `.gitcredentials`:
 [user]
 name       = SPONGE-JL
 email      = dev2sponge@gmail.com
-signingkey = %%%%%%%%%%%%%%%%
+signingkey = /path/to/user/public.key
+
+[gpg]
+format = ssh
 
 [commit]
 gpgsign = true
