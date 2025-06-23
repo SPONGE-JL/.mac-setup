@@ -1,3 +1,3 @@
 # ---
 # curl
-export PATH="/opt/homebrew/opt/curl/bin:${PATH}" # "$(brew --prefix curl)/bin:${PATH}"
+export PATH="$(brew --prefix curl)/bin:${PATH}"
