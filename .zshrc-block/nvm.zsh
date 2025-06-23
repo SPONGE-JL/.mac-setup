@@ -38,5 +38,7 @@ load-nvmrc() {
   fi
 }
 
-autoload -U add-zsh-hook
-add-zsh-hook chpwd load-nvmrc
+if [ "$0" = "-zsh" ]; then
+  autoload -U add-zsh-hook
+  add-zsh-hook chpwd load-nvmrc
+fi
