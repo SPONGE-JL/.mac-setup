@@ -48,8 +48,8 @@ Default terraform client version setting:
 # Check remote stable versions
 tfenv list-remote | grep -e "^1.\d*." 2> /dev/null | grep -v "-" | head -n 7
 
-# Set latest stable version as default
-tfenv list-remote | grep -e "^1.\d*." 2> /dev/null | grep -v "-" | head -n 1)
+# Install latest stable version as default
+tfenv install $(tfenv list-remote | grep -e "^1.\d*." 2> /dev/null | grep -v "-" | head -n 1)
 
 # Check terraform client
 terraform --version
