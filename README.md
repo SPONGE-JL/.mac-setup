@@ -129,6 +129,17 @@ From factory reset to below example
   open '/Applications/draw.io.app'
   ```
 
+- [ExcallidrawZ](https://github.com/chocoford/ExcalidrawZ#readme)
+  with [Converter](https://github.com/sindrel/excalidraw-converter#readme)
+
+  ```bash
+  brew install --cask excalidrawz
+  open '/Applications/ExcalidrawZ.app'
+
+  brew install excalidraw-converter
+  exconv version
+  ```
+
 ## AppStore
 
 - [Amphetamine](https://apps.apple.com/us/app/amphetamine/id937984704?mt=12): Powerful keep-awake utility
